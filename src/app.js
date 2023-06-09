@@ -1,3 +1,5 @@
+'use strict';
+require('dotenv').config();
 const express = require('express');
 const morgan = require('morgan');
 const { default: helmet } = require('helmet');
@@ -10,6 +12,7 @@ app.use(helmet()); // security middleware
 app.use(compression());
 
 // init database
+require('./db/init.mongodb');
 
 // init routes
 app.get('/abc', (req, res) => {
