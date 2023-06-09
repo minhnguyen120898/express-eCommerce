@@ -1,7 +1,7 @@
 "use strict";
 const mongoose = require("mongoose");
-
-const connectString = `mongodb://localhost:27017/devEcommerce`;
+const { databases: { port, host, name } } = require("../configs/config.mongodb");
+const connectString = `mongodb://${host}:${port}/${name}`;
 
 class Database {
   instance = null;
