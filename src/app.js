@@ -10,6 +10,7 @@ app.use(helmet()); // security middleware
 app.use(compression());
 
 // init database
+require('./db/init.mongodb');
 
 // init routes
 app.get('/abc', (req, res) => {
