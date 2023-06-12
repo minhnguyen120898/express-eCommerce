@@ -15,13 +15,7 @@ app.use(compression());
 require('./db/init.mongodb');
 
 // init routes
-app.get('/abc', (req, res) => {
-    const data = 'hello world';
-    return res.status(200).json({
-        message: "Welcome",
-        data: data
-    })
-})
+app.use('/', require('./routers'))
 // handle errors
 
 
